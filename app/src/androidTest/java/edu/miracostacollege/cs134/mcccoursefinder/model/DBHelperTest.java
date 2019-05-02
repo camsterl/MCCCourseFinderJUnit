@@ -43,6 +43,10 @@ public class DBHelperTest {
         assertEquals("testing the size of the db", 1, mDB.getAllCourses().size());
         //assert tha the id is 1
         assertEquals("testing id of testcourse", 1, testCourse.getId());
+
+        //get course from database and compare
+        Course testCourseDB = mDB.getCourse(1);
+        assertEquals("testing testcoursedb",testCourse, testCourseDB);
     }
 
     @Test

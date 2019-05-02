@@ -1,5 +1,7 @@
 package edu.miracostacollege.cs134.mcccoursefinder.model;
 
+import java.util.Objects;
+
 /**
  * The <code>Course</code> class represents a single course at MiraCosta College,
  * including its alpha (e.g. CS), number (e.g. 134) and title (e.g. Mobile Application Development)
@@ -62,4 +64,16 @@ public class Course {
                 ", Title='" + mTitle + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return mId == course.mId &&
+                Objects.equals(mAlpha, course.mAlpha) &&
+                Objects.equals(mNumber, course.mNumber) &&
+                Objects.equals(mTitle, course.mTitle);
+    }
+
 }
